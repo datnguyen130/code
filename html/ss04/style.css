@@ -54,11 +54,11 @@ body{
 
 }
 #content{
-    width: 680px;
+    width: 609px;
     min-height: 400px;
     border: 1px solid #cdcdcd;
     float: left;
-    margin-left: 5px;
+    margin-left: 12px;
     margin-right: 5px;
     margin-bottom: 5px;
     font-family: "Times New Roman";
@@ -67,6 +67,9 @@ body{
     color: #295f2d;
     background: #ffe67c ;
     text-align: justify-all;
+    padding-right: 30px;
+    padding-left: 30px;
+
 }
 #right{
     width: 150px;
