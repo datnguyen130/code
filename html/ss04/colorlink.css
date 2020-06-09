@@ -1,0 +1,15 @@
+#p:link,#p:visited{
+    background-color:crimson;
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+#p:hover,#p:active {
+    background-color: aqua;
+}
+p:first-letter{
+    font-size: 50px;
+    font-weight: bolder;
+}
