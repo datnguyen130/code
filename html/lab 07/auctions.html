@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Auctions</title>
+    <style type="text/css">
+        body{
+            font-family: Arial, Verdana, sans-serif;
+        }
+        table{
+            width: 800px;
+            height: 300px;
+        }
+
+        td{
+            font-weight: bold;
+            padding: 15px;
+            border-right: 1px solid white;
+        }
+        .left{
+            text-align: left;
+            padding-left: 10px;
+        }
+        .right{
+            text-align: right;
+            padding-right: 10px;
+        }
+        th{
+            border-top: 1px solid #666666;
+            border-bottom: 3px solid #000000;
+            text-transform: uppercase;
+            padding: 0px;
+        }
+        tr:nth-child(odd) td {
+            background: rgba(160, 162, 164, 0.14);
+        }
+        tr:hover{
+            background: #0088dd;
+        }
+        tr.letter{
+            letter-spacing: 2px;
+        }
+        th,td{
+            width:200px ;
+        }
+
+    </style>
+</head>
+<body>
+<table>
+    <caption><h2 class="left ">First Editon Auctions</h2></caption>
+    <tr class="letter">
+        <th><h3 class="left">author</h3></th>
+        <th><h3 class="left">title</h3></th>
+        <th><h3 class="right">reseve <br> price</h3></th>
+        <th><h3 class="right">current <br> bid</h3></th>
+    </tr>
+    <tr>
+        <td class="left">E.E. Cummings</td>
+        <td class="left">Tulips & Chimneys</td>
+        <td class="right">$2,000.00</td>
+        <td class="right">$2,642.50</td>
+    </tr>
+    <tr>
+        <td class="left">Charles <br> d'Orleanas</td>
+        <td class="left">Poemes</td>
+        <td></td>
+        <td class="right">$5,866.00</td>
+    </tr>
+    <tr>
+        <td class="left">T.S. Eliot</td>
+        <td class="left">Poems 1909 - <br> 1925</td>
+        <td class="right">$1,250.00</td>
+        <td class="right">$8,499.35</td>
+    </tr>
+    <tr>
+        <td class="left">Sylvia Plath</td>
+        <td class="left">The Clossus</td>
+        <td></td>
+        <td class="right">$1031.72</td>
+    </tr>
+</table>
+</body>
+</html>
