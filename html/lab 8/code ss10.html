@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 08</title>
+    <style>
+        input:required{
+            outline: 1px red solid;
+            color: green;
+        }
+        input:required:valid{
+            background-size: 10px 10px;
+            background-position: right top;
+            background-repeat: no-repeat;
+        }
+        input:required:invalid{
+            background-size: 10px 10px;
+            background-position: right top;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+<h1>Code Snippet 1</h1>
+<form method="get" action="try.php">
+    Name: <input type="text" name="name" required = "true"> <br>
+    Email: <input type="email" name="emailid" required="true">
+    <input type="submit" value="submit">
+</form>
+<br><br><br>
+
+<h1>Code Snippet 2</h1>
+<form action="test.html" method="get">
+    <label for="emailid">Email</label>
+    <input type="email" value="" id="emailid" name="emailadress" maxlength="255">
+    <input type="submit" value="submit">
+</form>
+<br><br><br>
+
+<h1>Code Snippet 3</h1>
+<label for="url">Enter your Web page address:</label>
+<input type="url" value="" id="urlname" name="urltext" maxlength="255">
+<input type="submit" value="submit">
+<br><br><br>
+
+<h1>Code Snippet 4</h1>
+<label for="telno">Telephone Number</label>
+<input type="tel" value="" id="telno" name="telephone_no" maxlength="10">
+<br><br><br>
+
+<h1>Code Snippet 5 </h1>
+<label for="stud_age">Age:</label>
+<input type="number" value="15" id="stud_age" name="studentage" min="15" max="45" step="1">
+<input type="submit" value="submit">
+<br><br><br>
+
+<h1>Code Snippet 6</h1>
+<label for="">Survey for packages offered[scale: 1-10]:</label>
+<input type="range" name="rating" min="1" max="10">
+<input type="submit" value="submit">
+<br><br><br>
+
+<h1>Code snippet 7</h1>
+<label for="sdate">Date:</label>
+<input type="date" id="sdate" name="stratdate" min="2000-01-01">
+<input type="submit" value="submit">
+<br><br><br>
+
+<h1>Code Snippet 8</h1>
+<label for="stmonth">Month:</label>
+<input type="month" id="stmonth" name="stratmonth">
+<input type="submit" value="submit">
+<br><br><br>
+
+<h1>Code Snippet 9</h1>
+<label for="">Week</label>
+<input type="week" name="week">
+<input type="submit" value="submit">
+<br><br><br>
+
+<h1>Code Snippet 10</h1>
+<label for="">Time</label>
+<input type="time" name="time">
+<input type="submit" value="submit">
+<br><br><br>
+
+<h1>Code Snippet 11</h1>
+<label for="mydatetime">DAte-Time:</label>
+<input type="datetime" name="mydatetime">
+<input type="submit" value="submit">
+<br><br><br>
+
+<h1>Code Snippet 12</h1>
+<label for="">Color</label>
+<input type="color" name="mycolor">
+<input type="submit" value="submit">
+<br><br><br>
+
+<h1>Code Snippet 13</h1>
+<label>Name: <em><img src="star.jpg" width="9" height="10" alt="" border="0"></em></label><br>
+<input type="text" value="" name="first" size="8" tabindex="1" required="true">
+<input type="text" value="" name="last" size="14" tabindex="2" required="true">
+<input type="submit" value="submit">
+<br><br><br>
+
+<h1>Code Snippet 14</h1>
+<label for=""><img src="required_strar.gif" height="10px" width="10px" alt=""></label>
+<input type="text" value="" name="first" size="8" tabindex="1" required="true" placeholder="First Name"><br>
+<input type="text" value="" name="last" size="14" tabindex="2" required="true" placeholder="Last Name"><br>
+<br><br>
+
+<h1>Code Snippet 15</h1>
+<label for="">Number: <img src="" height="10px" width="10px" alt=""></label>
+<input type="tel" value="" size="4" maxlength="5" tabindex="11" required="true" placeholder="Code" pattern="[+0-9]{1,4}"
+title="Fomat:(+)99(99)">
+<label for=""></label>
+<input type="tal" value="" size="10" maxlength="12" tabindex="13" required="true" placeholder="Number" pattern="[0-9]{8, }" title="Mininum 8 numbers">
+<br><br><br>
+
+<h1>Code Snippet 16</h1>
+<label for="">Email Address:</label>
+<input type="email" value="" name="emailid" maxlength="255" tabindex="5" required=" true" placeholder="Email Address" multiple/>
+<br><br><br>
+
+<h1>Code Snippet 17</h1>
+<label for="">Name:</label>
+<br>
+<input type="text" value="" name="first" size="8" tabindex="1" placeholder="First Name" autofocus/>
+<input type="submit" value="submit">
+<br> <label for="">First Name</label>
+<br><br><br>
+
+<h1>Code Snippet 18</h1>
+<input type="text" name="mytext" form="myform"/>
+<form action="" id="myform"></form>
+<br><br><br>
+
+<h1>Code Snippet 19</h1>
+Email: <input type="email" name="email" autocomplete="off"/>
+<input type="submit" value="submit">
+<br><br><br>
+
+<h1>Code Snippet 20</h1>
+<label for="">Select the mode of payment: </label>
+<input type="text" name="payment" list="paymentlist"/>
+<datalist id="paymentlist">
+    <option value="Cash-on-Delivery"></option>
+    <option value="Net Banking"></option>
+    <option value="Credit Card"></option>
+    <option value="Debit Card"></option>
+    <option value="E-Gift Voucher"></option>
+</datalist>
+<input type="submit" value="submit">
+<br><br><br>
+
+<h1>Code Snippet 21</h1>
+<label for="">Downloading status : </label>
+<progress value="35" max="100"></progress>
+<input type="submit" value="submit">
+<br><br><br>
+
+<h1>Code Snippet 22</h1>
+<label for="">Total score of marks: </label>
+0 &nbsp;<meter min="0" max="400" value="180" title="numbers scored" low="120" high="300"></meter> &nbsp;400 <br>
+<input type="submit" value="submit">
+<br><br><br>
+
+<h1>Code Snippet 23</h1>
+<form action="" oninput="x.value = pareInt(type.value)*parseInt(duration.value)" ></form>
+<label for="">Membership Type:</label>
+<select name="type" id="">
+    <option value="400">Gold - $400</option>
+    <option value="500">Silver - $500</option>
+    <option value="600">Platinum - 600$</option>
+</select>
+<label for="">Duration [years]:</label>
+<input type="number" value="0" name="duration" min="1"max="5" step="1">
+<label for="">Annual payment fees: $.</label>
+<output name="x" for="type duration"></output>
+
+</body>
+</html>
