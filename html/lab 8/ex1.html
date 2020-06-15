@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example1</title>
+    <style>
+        body{
+            color: #675745;
+            font-size: 100%;
+            font-family: Arial, Verdana, sans-serif;
+            font-weight: 1.2em;
+        }
+        fieldset{
+            border-radius: 10px;
+            border: 1px solid #efefef;
+            width: 300px;
+        }
+        legend{
+            background-color: #efefef;
+            border-radius: 10px;
+            text-transform: uppercase;
+            padding: 10px;
+        }
+        .border{
+            border-top: none;
+            border-right: none;
+            border-left: none;
+            border-bottom: 1px dotted #a0a2a4;
+            margin-top: 20px;
+            padding-bottom: 10px;
+        }
+        .sub{
+            background-color: #675745;
+            color: white;
+            text-transform: uppercase;
+            border-radius: 5px;
+            margin-left: 130px;
+            border: 1px solid #675745;
+            width: 150px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<fieldset>
+    <legend>Newsletter</legend>
+    <label for="Name">Name: </label>
+    <input class="border" type="text" id="Name" size="30"> <br>
+    <label for="Email">Email: </label>
+    <input class="border" type="email" id="Email" size="30"> <br><br>
+    <input class="sub" type="submit" value="Subscribe">
+</fieldset>
+</body>
+</html>
