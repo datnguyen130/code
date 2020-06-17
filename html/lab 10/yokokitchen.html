@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yoko's Kitchen</title>
+    <style type="text/css">
+    body{
+        font-family: Georgia, Times, serif;
+        background-image: url("images/dark-wood.jpg");
+        color: #888888;
+    }
+
+    #main{
+        width: 940px;
+        padding: 0;
+        margin-left: auto;
+        margin-right: auto;
+        border: 1px solid black;
+    }
+    #head{
+        height: 130px;
+        border:none;
+        background-image:url("images/header.jpg");
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+    #nav{
+        background:#aeaca8 ;
+    }
+    #nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        border: none;
+        overflow: hidden;
+    }
+
+    #nav li {
+        float: left;
+    }
+
+    #nav li a {
+        display:block;
+        text-align: center;
+        padding: 5px 20px 5px 20px;
+        text-decoration: none;
+    }
+    #nav li a:not(.active){
+        color: white;
+    }
+
+    #nav li a:hover {
+        color: black;
+        font-weight: bold;
+    }
+    .active {
+        color:black;
+    }
+    .left{
+        float: left;
+        background-color: #ffffff;
+        width: 640px;
+        height: 254px;
+        position: relative;
+    }
+    .left figure{
+        float: left;
+        border: 1px solid #efefef;
+        display: inline;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    .left div{
+        line-height: 1.5em;
+        display: inline;
+        position: relative;
+
+    }
+    .left .red{
+        color: #e37f96;
+        font-size: 1.3em;
+    }
+    #right{
+        background-color: #ffffff;
+        float: right;
+        height: 508px;
+        width: 299px;
+        margin-top: 0px;
+        border-left: 1px solid #efefef;
+        line-height: 2.0em;
+    }
+    #right h1{
+        color: #e37f96;
+        padding-left: 20px;
+    }
+    #right ul{
+        list-style-type: none;
+
+    }
+    #right li a{
+        text-decoration: none;
+        color: #e37f96;
+        border-bottom: 1px solid #efefef;
+        display: block;
+        padding-bottom: 15px;
+        padding-top: 15px;
+        margin-right: 15px;
+    }
+    #right p {
+        margin-left: 20px;
+        line-height: 1.5em;
+    }
+    #right li a:hover{
+        background-color: #efefef;
+        color: #9d6672;
+    }
+    footer{
+        color: #cdcdcd;
+        background-color: #666666;
+        clear: both;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 20px;
+        display: flex;
+        font-size: 70%;
+    }
+    </style>
+</head>
+<body>
+<div id="main">
+<div id="head"></div>
+<div id="nav">
+    <ul>
+        <li><a class="active" href="#">home</a></li>
+        <li><a href="#">classes</a></li>
+        <li><a href="#">catering</a></li>
+        <li><a href="#">about</a></li>
+        <li><a href="#">contact</a></li>
+    </ul></div>
+
+    <div class="left">
+    <figure>
+        <img src="images/bok-choi.jpg" width="270" alt="">
+        <figcaption>Bok Choi</figcaption>
+    </figure>
+    <div >
+        <h2>Japanese Vegetarian</h2>
+        <p class="red">Five week coure in London</p>
+        <p>A five week introduction to traditional Japanese vegetarian meals, teaching you a selection of rice and noodle dishes</p>
+    </div>
+    </div>
+    <div id="right">
+        <h1>Popular Recipes</h1>
+        <ul>
+            <li><a href="#">Yakitori (grill chicken) </a></li>
+            <li><a href="#">Tsukune(minced chicken patties)</a></li>
+            <li><a href="#">Okonomiyaki (Savory pancakes)</a></li>
+            <li><a href="#">Mizutaki (chicken stew)</a></li>
+        </ul>
+        <h1>Contact </h1>
+        <p>Yoko's Kitchen 27 Redchurch Street Shoreditch London E2 7DP</p>
+    </div>
+    <div class="left">
+        <figure>
+            <img src="images/teriyaki.jpg" width="270" alt="">
+            <figcaption>Teriyaki Sauce</figcaption>
+        </figure>
+        <div>
+            <h2>Sauces Masterclass</h2>
+            <p class="red">One day workshop</p>
+            <p>An intensive one-day course looking at how to create the most delicious sauces for use in a range of Japanese cookery</p>
+        </div>
+    </div>
+    <footer>
+        &copy; 2011 Yoko's Kitchen
+    </footer>
+</div>
+
+
+</body>
+</html>
