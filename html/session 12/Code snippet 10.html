@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reservation</title>
+    <script>
+        function showStyle(field) {
+            field.style.backgroundColor='#FFFFCC';
+        }
+        function hideStyle(field) {
+            field.style.backgroundColor='#FFFFFF';
+
+        }
+        function setFontStyle(field) {
+            field.style.fontWeight='bold';
+            field.style.fontFamily='Arial'
+
+        }
+    </script>
+</head>
+<body>
+<h2>Feedback Form</h2>
+<form action="" id="frmreservation">
+    <table>
+        <tr>
+            <td><label for="txtName">Name:</label></td>
+            <td><input type="text" id="txtName" onfocus="showStyle(this);" onblur="hideStyle(this);" onselect="setFontStyle(this);"></td>
+        </tr>
+        <tr>
+            <td><label for="txtEmail">E-mail:</label></td>
+            <td><input type="text" id="txtEmail" onfocus="showStyle(this);" onblur="hideStyle(this);"onselect="setFontStyle(this)"></td>
+        </tr>
+        <tr>
+            <td><label for="txtComment">Comment:</label></td>
+            <td><textarea name="" id="txtComment" cols="15" rows="3" onfocus="showStyle(this);" onblur="hideStyle(this);" onselect="setFontStyle(this);"></textarea></td>
+        </tr>
+        <tr>
+            <td><input type="button" id="btnSubmit" value="Submit"></td>
+            <td><input type="reset" id="btnReset"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
