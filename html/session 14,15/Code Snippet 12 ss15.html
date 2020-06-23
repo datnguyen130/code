@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function display_browser() {
+            document.write('Browser name: ' +navigator.appName + '<br/>');
+            document.write('Browser version: ' + navigator.appVersion + '<br/>');
+            document.write('Platform: ' + navigator.platform + '<br>');
+            if (navigator.cookieEnabled){
+                document.write('Cookies is enabled in the browser.');
+            }
+
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="Browser Information" onclick="display_browser();">
+</body>
+</html>

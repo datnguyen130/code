@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function cal_diameter()
+    {
+        var diameter = (parseInt(this.radius)*2);
+        return diameter;
+
+    }
+    function circle(radius)
+    {
+        this.radius=radius;
+        this.get_diameter = cal_diameter();
+
+    }
+    circleObj = new circle('10');
+    alert('Diameter: ' + circleObj.get_diameter);
+</script>
+</body>
+</html>
