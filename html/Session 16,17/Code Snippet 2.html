@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+    <script>
+        window.onload = function () {
+            var canvas = document.getElementById('mcanvas');
+            var ctext = canvas.getContext('2d');
+            ctext.beginPath();
+            ctext.fillStyle = "DarkBlue";
+            ctext.fillRect(18,50,200,100);
+            ctext.stroke();
+
+        };
+    </script>
+</head>
+<body>
+<canvas id="mcanvas" width="578" height="200"></canvas>
+</body>
+</html>
