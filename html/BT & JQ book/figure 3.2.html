@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <title>Hello, world!</title>
+</head>
+<body>
+
+<div id="div1"><h2>Functions in Jquery</h2></div>
+<button type="button" class= "call-btn">Click me</button>
+
+<script src="../bootstrap/js/jquery-3.5.1.min.js"></script>
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script>
+    //Basic way
+    function Multiply(var1, var2, var3) {
+        return(var1 * var2 * var3);
+    }
+    document.write('Basic Way: ' + Multiply(10,10,8));
+    document.write('<br>');
+    //Function as Varible
+    var Multiply = function (var1, var2, var3) {
+        return(var1 * var2 * var3);
+    }
+    document.write('Function as Varible Name : ' + Multiply(10,10,8));
+    document.write('<br>');
+    //Self Invoking Function
+    (function () {
+        document.write('Self Involing Function, Hello! I called myself');
+
+    })();
+    //Creating own function
+    $(document).ready(function () {
+        $.fn.myfunction = function () {
+            alert('You have susscessfully defined the function');
+
+        }
+        $('.call-btn').click(function () {
+            $.fn.myfunction()
+
+        })
+
+    })
+
+
+</script>
+</body>
+</html>

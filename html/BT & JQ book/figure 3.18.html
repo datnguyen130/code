@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <title>Hello, world!</title>
+</head>
+<body style="font-family: Arial">
+<input type="button" id="btnAdd" value="Add a New List Item" class="btn btn-primary">
+<input id="btnUndelegate" type="button" class="btn btn-primary" value="Undelegate" >
+<ul>
+    <li>List Item1</li>
+    <li>List Item2</li>
+</ul>
+
+
+<script src="../bootstrap/js/jquery-3.5.1.min.js"></script>
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('ul').on('click', function () {
+            $(this).fadeOut(500);
+
+        });
+        $('#btnAdd').on('click', function () {
+            $('ul').append('<li>New list item</li>');
+
+        })
+        $('#btnUndelegate').on('click', function () {
+            $('ul').off('click');
+
+        });
+
+    });
+</script>
+</body>
+</html>
