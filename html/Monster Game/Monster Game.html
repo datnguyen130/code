@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <title>Title</title>
+    <style>
+        .img1{
+            width: 100%;
+            display: block;
+            animation-name: run;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            z-index: -1;
+        }
+        .div1{
+            background-color: black;
+        }
+        .div2{
+            position: absolute;
+            margin: 0 auto;
+            top: 20px;
+            left:33%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        @keyframes run {
+            0% {opacity: 0;}
+            50%{opacity: 1.0;}
+            100%{opacity: 0;}
+        }
+        .div3{
+            position: absolute;
+            border: 1px solid black;
+            background-color: #cdcdcd;
+            width: 367px;
+            height: 427px;
+            overflow: hidden;
+            top: 109px;
+            display: flex;
+            flex-direction: column;
+        }
+        .div4_1, .div4_2, .div4_3, .div4_4{
+            position: relative;
+        }
+        .div4_1 {
+            top: 0;
+        }
+        .div4_2{
+            top:106px ;
+        }
+        .div4_3{
+            top: 212px;
+        }
+        .div4_4{
+            top: 318px;
+        }
+
+        .img_MT{
+            position:absolute;
+            left: 0;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="div1"><img class="img1" src="images/lightning-01.jpg" height="640" width="960"/>
+    <div class="div2">
+        <img src="images/Monster_Mashup.png" height="33" width="286"/>
+        <img src="images/frame.png" height="585" width="550"/>
+        <div class="div3">
+            <div class="div4_1"><img class="img_MT" src="images/headsstrip.jpg" height="106" width="3670"/></div>
+            <div class="div4_2"><img class="img_MT" src="images/eyesstrip.jpg" height="106" width="3670"/></div>
+            <div class="div4_3"><img class="img_MT" src="images/nosesstrip.jpg" height="106" width="3670"/></div>
+            <div class="div4_4"><img class="img_MT" src="images/mouthsstrip.jpg" height="110" width="3670"/></div>
+        </div>
+    </div>
+</div>
+<script src="../bootstrap/js/jquery-3.5.1.min.js"></script>
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".img_MT").click(function(){
+            $(this).animate({"left": "-=367"},"slow");
+            if($(this).position().left < -3302){
+                $(this).animate({"left": "0"},"fast")};
+
+
+        });
+    });
+
+</script>
+
+</body>
+</html>
