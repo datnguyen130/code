@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chore Door</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <style>
+        body{
+            margin: 0 auto;
+            text-align: center;
+
+        }
+        .title{
+            background-color:#02cccc;
+        }
+        .contain{
+            background-color: #010048;
+        }
+        .instructions{
+            color: #018f8f;
+        }
+        .rule{
+            display: block;
+            text-align: left;
+        }
+        .col-md-6{
+            color: #cdcdcd;
+        }
+        .numberrule{
+            font-size: 3em;
+            color: #02cccc;
+        }
+        .containImg{
+            position: relative;
+            display: inline-flex;
+            flex-direction: row;
+            left: -75px;
+        }
+        .contain1, .contain2, .contain3{
+            height: 227px;
+            width: 120px;
+            position: relative;
+            margin-left: 20px;
+
+        }
+        #door1, #door2, #door3 {
+            position: absolute;
+            z-index: 2;
+        }
+        #img1, #img2, #img3 {
+            position: absolute;
+            z-index: 1 ;
+        }
+        button{
+            display: block;
+            margin: 10px auto;
+            color: #010048;
+            background-color: #ba4726;
+            height: 100px;
+            width: 120px;
+
+        }
+        .streak{
+            display: inline-block;
+            background-color: #02a0a1;
+            margin: 20px;
+            font-size: 3em;
+            padding-left: 20px;
+            padding-right: 20px;
+            color: black;
+        }
+        .current{
+            text-align: right;
+        }
+        .best{
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+<div class="title" ><img src="images/logo.svg" alt=""></div>
+<div class="contain"><br>
+    <div class="instructions"><img src="images/star.svg" alt=""> Instructions <img src="images/star.svg" alt=""></div>
+    <div class="rule">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-6"><span class="numberrule">1&nbsp; &nbsp;</span>Hiding behind one of these door is the ChoreBot</div>
+            <div class="col-md-2"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-6"><span class="numberrule">2&nbsp; &nbsp;</span>Your mission is to open all of the doors without running into the ChoreBot</div>
+            <div class="col-md-2"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-6"><span class="numberrule">3&nbsp; &nbsp;</span>If you manage to avoid the ChoreBot until the very last door,you win!</div>
+            <div class="col-md-2"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-6"><span class="numberrule">4&nbsp; &nbsp;</span>See if you can score a winning streak!</div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+    <div class="containImg">
+        <div class="contain1 " ><img class="door" id="door1" src="images/closed_door.svg" alt=""><img id="img1" src="" alt=""></div>
+        <div class="contain2 " ><img class="door" id="door2" src="images/closed_door.svg" alt=""><img id="img2" src="" alt=""></div>
+        <div class="contain3 " ><img class="door" id="door3" src="images/closed_door.svg" alt=""><img id="img3" src="" alt=""></div>
+    </div>
+    <button id="button" type="button">Good Luck!</button>
+    <div class="row">
+        <div class="col-md-6 current">Current streak: <br> <p id="Current" class="streak">0</p></div>
+        <div class="col-md-6 best">Best streak: <br> <p id="Best" class="streak">0</p></div>
+    </div>
+</div>
+
+
+
+<script src="../bootstrap/js/jquery-3.5.1.min.js"></script>
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var CurrentStreak = 0;
+        var BestTreak = 0;
+        var imgs = new Array();
+        imgs[0] = "images/robot.svg";
+        imgs[1] = "images/space.svg";
+        imgs[2] = "images/beach.svg";
+        window.onload = randonDoor();
+        function randonDoor() {
+            //random 1,2,3
+            var rnd123 = Math.floor(Math.random() *3) + 1 ;
+            //random 1,2
+            var rnd12 = Math.floor(Math.random() *2) + 1 ;
+            //random 2,3
+            var rnd23 = Math.floor(Math.random() *2) + 2 ;
+            //random 1,3
+            var rnd13 = Math.floor(Math.random() *3) + 1 ;
+            if (rnd13 == 2){rnd13 = 1}
+            var Doorrnd = "img" + rnd123;
+            var IdDoor = "door" + rnd123;
+
+            document.getElementById(Doorrnd).src = imgs[0];
+            document.getElementById(IdDoor).classList.add("robot");
+            if (rnd123 == 1){
+                Doorrnd = "img" + rnd23;
+                document.getElementById(Doorrnd).src = imgs[1];
+                if (rnd23 == 2){
+                    document.getElementById("img3").src = imgs[2];
+                }
+                else if (rnd23 == 3){
+                    document.getElementById("img2").src = imgs[2]
+                }
+
+            }
+            else if (rnd123 == 2){
+                Doorrnd = "img" + rnd13;
+                document.getElementById(Doorrnd).src = imgs[1];
+                if (rnd13 == 1){
+                    document.getElementById("img3").src = imgs[2];
+                }
+                else if (rnd13 == 3){
+                    document.getElementById("img1").src = imgs[2]
+                }
+
+            }
+            else if (rnd123 == 3){
+                Doorrnd = "img" + rnd12;
+                document.getElementById(Doorrnd).src = imgs[1];
+                if (rnd12 == 1){
+                    document.getElementById("img2").src = imgs[2];
+                }
+                else if (rnd12 == 2){
+                    document.getElementById("img1").src = imgs[2]
+                }
+
+            }
+            var CountClick = 0;
+            $(".door").click(function () {
+                CountClick++;
+
+                if ((CountClick == 3) && ($(this).hasClass("robot"))){
+                    if(CurrentStreak >= BestTreak){
+                        CurrentStreak ++;
+                        BestTreak++;
+                    }
+                    else if (CurrentStreak < BestTreak){
+                        CurrentStreak ++;
+                    }
+                    document.getElementById("button").innerHTML = "You Win. Play again?"
+                }
+                if ((CountClick == 1 || CountClick == 2) && ($(this).hasClass("robot"))){
+                    document.getElementById("button").innerHTML = "Game Over. Play again?"
+                    CurrentStreak = 0;
+                }
+                $(this).hide();
+                document.getElementById("Current").innerHTML = CurrentStreak;
+                document.getElementById("Best").innerHTML = BestTreak;
+            });
+        };
+        $("#button").click(function () {
+            $(".door").removeClass("robot");
+            randonDoor();
+            document.getElementById("button").innerHTML = "Good Luck!"
+            $(".door").show();
+        });
+    })
+</script>
+</body>
+</html>
