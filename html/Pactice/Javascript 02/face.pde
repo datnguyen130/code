@@ -30,16 +30,16 @@ draw = function() {
 
 };
 
-drawFace = function(size,color,speed){
+drawFace = function(x,plus,color,speed){
     //face
     fill(255,color,0);
-    ellipse(size,600,300,300);
+    ellipse(x,600,300,300);
     //eyes
     fill(color,46,255);
-    ellipse(size + 80,530,eyeSize,eyeSize);
-    ellipse(size - 40,530,eyeSize,eyeSize);
+    ellipse(x + 80,530,eyeSize,eyeSize);
+    ellipse(x - 40,530,eyeSize,eyeSize);
     //mouth
     fill(color,0,255);
-    ellipse(size+30,650,120,130);
+    ellipse(x+30,650,120,130);
     eyeSize - speed;
 };
