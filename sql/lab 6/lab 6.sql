@@ -90,9 +90,13 @@ GO
 ALTER TABLE Mat_Hang
 ADD NgayXH datetime
 GO
+
+-- 8 
+-- a
 CREATE INDEX Index1 ON Mat_Hang(TenSP)
 CREATE INDEX Index2 ON Khach_Hang(TenKH)
 GO
+--b
 CREATE VIEW View_KhachHang AS 
 SELECT TenKH,Diachi,SDT FROM Khach_Hang
 GO
@@ -104,3 +108,35 @@ SELECT TenKH,SDT, TenSP,SoLuong,NgayDat FROM Khach_Hang
 JOIN Don_Hang ON Khach_Hang.MaKH=Don_Hang.MaKH
 JOIN Don_Hang_CT ON Don_Hang.MaDon=Don_Hang_CT.MaDon
 GO
+--c
+create procedure View_KhachHang
+@Ma_KhachHang int
+as
+select * from Khach_Hang
+where MaKH = @Ma_KhachHang
+go
+exec View_KhachHang 111
+go
+
+create procedure View_SanPham 
+@Ma_Don int 
+as
+select MaDon,Don_hang.MaKH,tenKH,DiaChi,SDT 
+from Don_Hang
+join Khach_Hang
+on Don_Hang.MaKH = Khach_Hang.MaKH
+where Don_Hang.MaDon = @Ma_Don
+go
+exec View_SanPham 1222
+go
+
+create proc SP_SanPham_MaKH
+@Ma_KH int 
+as
+select MaKH, Don_Hang.MaDon,MaSP,TenSP,SoLuong,GiaBan
+from Don_Hang
+join Don_Hang_CT
+on Don_Hang.MaDon = Don_Hang_CT.MaDon
+where MaKH = @Ma_KH
+go
+exec SP_SanPham_MaKH 222

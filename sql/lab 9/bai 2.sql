@@ -84,3 +84,33 @@ select MaSP,TenSP,TenHangSX
 from SP_CH
 join Hang_SX
 on SP_CH.MaHangSX = Hang_SX.MaHangSX
+go
+-- Store Procedure
+create proc SP_SanPham_TenHang
+@Ten_Hang varchar(20)
+as
+select MaSP,TenSP,DonVi,TenHangSX,Gia,SoLuong
+from Hang_SX
+join SP_CH 
+on Hang_SX.MaHangSX = SP_CH.MaHangSX
+where TenHangSX = @Ten_Hang
+go
+exec SP_SanPham_TenHang 'ASUS'
+go
+
+create proc SP_SanPham_Gia 
+@Gia_SP money
+as
+select * from SP_CH
+where Gia >= @Gia_SP
+go
+exec SP_SanPham_Gia 500
+go
+
+create proc SP_SanPham_HetHang
+@So_Luong int
+as
+select * from SP_CH
+where SoLuong = @So_Luong
+go
+exec SP_SanPham_HetHang 10
