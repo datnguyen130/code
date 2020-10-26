@@ -8,10 +8,15 @@ public class Flight {
         this.number = 0;
         this.destination = "";
     }
-    
+
     public Flight(int number, String destination){
-        this.number = number;
-        this.destination = destination;
+        if (number > 0){
+            this.number = number;
+            this.destination = destination;
+        }
+        else {
+            System.out.println("Invalid value");
+        }
     }
 
     public String getDestination() {
