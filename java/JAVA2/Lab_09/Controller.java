@@ -14,7 +14,6 @@ public class Controller {
              Statement stmt = conn.createStatement()){
 
             ResultSet rset = stmt.executeQuery("select * from Users");
-
             while (rset.next()){
                 int id = rset.getInt("IdUser");
                 String userName = rset.getString("Username");
@@ -232,6 +231,7 @@ public class Controller {
         try (Connection conn =  DriverManager.getConnection("jdbc:mysql://localhost:3306/libary","root","");
              Statement stmt = conn.createStatement()){
             ResultSet rset = stmt.executeQuery("select * from books");
+            listBooks.clear();
             while (rset.next()){
                 int id = rset.getInt("IdBook");
                 String nameBook = rset.getString("NameBook");
