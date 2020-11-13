@@ -657,7 +657,10 @@ public class Controller {
     public void DisplayBag(List<Bag> listBag){
         System.out.printf("%-30s%-30s%-30s%-30s%-30s\n","idBook","nameBook","price","qty","discount");
         for (int i = 0; i < listBag.size(); i++){
-            System.out.printf(listBag.get(i).toString());
+            if (listBag.get(i).getQty() > 0){
+                System.out.printf(listBag.get(i).toString());
+            }
+
         }
     }
 
