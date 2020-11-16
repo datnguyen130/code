@@ -35,8 +35,8 @@ CREATE TABLE Customer(
     IdCus int NOT NULL ,
     NameCus varchar(50),
     Address varchar(50),
-	Email varchar(50),
-	Phone int,
+	Email varchar(50) NOT NULL UNIQUE,
+	Phone int NOT NULL UNIQUE,
 	level int CHECK (level in (1,2,3)), -- 1: nomarl, 2: VIP, 3: V VIP
 	Created date,
     Updated date,

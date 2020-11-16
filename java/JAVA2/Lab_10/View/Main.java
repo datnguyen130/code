@@ -39,13 +39,13 @@ public class Main {
                     "5. Display all Books in shop\n" +
                     "6. Display top 3 new Book\n" +
                     "7. Display top 3 best sale Book\n" +
+                    "8. Go to Sign in/ Sign up\n" +
                     "0. Exit shop");
             choice3 = input.nextInt();
             switch (choice3){
                 case 1:
                     int choice = 1;
                     int choice2 = 1;
-                    do {
                         do {
                             listBooks = objBookController.loadingBooks();
                             listCustomers = objCustomerController.loadingCustomer();
@@ -75,7 +75,7 @@ public class Main {
                             }
                             System.out.println("What activities that you want? Choose it :");
                             System.out.println("1. Go back to Shop for shopping");
-                            System.out.println("2. Go to MENU to Sign up / Sign in");
+                            System.out.println("2. Go to MENU ");
                             choice2 = input.nextInt();
                             switch (choice2){
                                 case 1:
@@ -88,17 +88,46 @@ public class Main {
                                     System.out.println("Invalid choice");
                             }
                         } while (choice2 != 2);
-
+                    break;
+                case 2:
+                    objBookView.searchByCategory();
+                    break;
+                case 3:
+                    objBookView.searchByAuthor();
+                    break;
+                case 4:
+                    objBookView.searchByIdBook();
+                    break;
+                case 5:
+                    objBookController.DisplayBooks(listBooks);
+                    break;
+                case 6:
+                    objBookView.top3NewBook();
+                    break;
+                case 7:
+                    objBookView.top3BestSale();
+                    break;
+                case 8:
+                    int choice5 = 0;
+                    do {
+                        listCustomers = objCustomerController.loadingCustomer();
+                        listUsers = objUserController.loadingUsers();
                         System.out.println("===============================================");
                         System.out.println("||   1. SIGN UP FOR FREE                     ||");
                         System.out.println("||   2. ALREADY HAVE ACCOUNT, SIGN IN !      ||");
                         System.out.println("||   0. EXIT                                 ||");
                         System.out.println("===============================================");
-                        choice = input.nextInt();
-                        switch (choice){
+                        choice5 = input.nextInt();
+                        input.nextLine();
+                        switch (choice5){
                             case 1:
                                 System.out.println("SIGN UP");
-                                if (objUserController.SignUp(objUserView.PreSignUp())){
+                                Users objUser1 = new Users();
+                                Customers objCustomer1 = new Customers();
+                                objUser1 = objUserView.PreSignUp(listUsers);
+                                objCustomer1 = objCustomerView.PreCreateCustomer(listCustomers);
+
+                                if (objUserController.SignUp(objUser1,objCustomer1)){
                                     System.out.println("Sign up successfully ! Please Sign in !");
                                     objUser = new Users();
                                 } else {
@@ -113,7 +142,7 @@ public class Main {
                                 if (objUser.getRole() == 1){
                                     System.out.println("Welcome to Admin mode");
                                     do { listBooks = objBookController.loadingBooks();
-                                         listCustomers = objCustomerController.loadingCustomer();
+                                        listCustomers = objCustomerController.loadingCustomer();
                                         listUsers = objUserController.loadingUsers();
                                         listOrders = objOrderController.loadingOrders();
                                         listOrderDetails = objOrderController.loadingOrderDetail();
@@ -133,6 +162,7 @@ public class Main {
                                                 "13. Delete Order\n" +
                                                 "0.  Exit");
                                         choice4 = input.nextInt();
+                                        input.nextLine();
                                         switch (choice4){
                                             case 1:
                                                 objBookController.DisplayBooks(listBooks);
@@ -191,6 +221,7 @@ public class Main {
                                                 "2. View all your Orders Details\n" +
                                                 "0. Exit");
                                         choice4 = input.nextInt();
+                                        input.nextLine();
                                         switch (choice4){
                                             case 1:
                                                 objOrderController.DisplayOrderByIdUser(objUser,listOrders);
@@ -200,46 +231,29 @@ public class Main {
                                                 break;
                                             case 0:
                                                 System.out.println("You Signed out!");
+                                                break;
                                             default:
                                                 System.out.println("Invalid choice!!!");
+                                                break;
                                         }
                                     }while (choice4 != 0);
                                 }
                                 break;
                             case 0 :
                                 System.out.println("Pai Pai!!!");
-
                                 break;
                             default:
                                 System.out.println("Invalid Choice");
                                 break;
                         }
-                    }while (choice != 0);
-                    choice3 = 0;
-                    break;
-                case 2:
-                    objBookView.searchByCategory();
-                    break;
-                case 3:
-                    objBookView.searchByAuthor();
-                    break;
-                case 4:
-                    objBookView.searchByIdBook();
-                    break;
-                case 5:
-                    objBookController.DisplayBooks(listBooks);
-                    break;
-                case 6:
-                    objBookView.top3NewBook();
-                    break;
-                case 7:
-                    objBookView.top3BestSale();
+                    }while (choice5 != 0);
                     break;
                 case 0:
                     System.out.println("Thanks for your kind !!!");
                     break;
                 default:
                     System.out.println("Invalid Choice!!!");
+                    break;
             }
         }while (choice3 != 0);
     }

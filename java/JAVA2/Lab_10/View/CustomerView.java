@@ -58,5 +58,50 @@ public class CustomerView {
         return objCustomer;
     }
 
+    public Customers PreCreateCustomer(List<Customers> listCustomers){
+        Scanner input = new Scanner(System.in);
+        String nameCus = null;
+        String address = null;
+        String email = null;
+        int phone = 0;
+        int level = 1;
+        boolean valid1 = false;
+        boolean valid2 = false;
+        System.out.println("Enter your name :");
+        nameCus = input.nextLine();
+        System.out.println("Enter your address :");
+        address = input.nextLine();
+        do {
+            System.out.println("Enter your email : ");
+            email = input.nextLine();
+            for (int i = 0; i< listCustomers.size(); i++){
+                if (listCustomers.get(i).getEmail().equals(email)) {
+                    System.out.println("Already had this email!!! Please try the other email.");
+                    valid1 = false;
+                    break;
+                }else {
+                    valid1 = true;
+                }
+            }
+
+        } while (!valid1);
+        do {
+            System.out.println("Enter your phone : ");
+            phone = input.nextInt();
+            input.nextLine();
+            for (int i = 0; i< listCustomers.size(); i++){
+                if (listCustomers.get(i).getPhone() == phone) {
+                    System.out.println("Already had this phone!!! Please try the other phone.");
+                    valid2 = false;
+                    break;
+                }else {
+                    valid2 = true;
+                }
+            }
+
+        } while (!valid2);
+        Customers objCus = new Customers(0,nameCus,address,email,phone,level,"CURRENT_DATE()",null);
+        return objCus;
+    }
 
 }

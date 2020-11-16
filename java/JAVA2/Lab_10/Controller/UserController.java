@@ -33,14 +33,30 @@ public class UserController {
         return  listUser;
     }
 
-    public boolean SignUp(Users user){
+    public boolean SignUp(Users user, Customers customer){
         try (Connection conn =  DriverManager.getConnection("jdbc:mysql://localhost:3306/libary","root","");
              Statement stmt = conn.createStatement()){
-            String signup = "insert into Users(Username,Password,Role,Created) values('"+user.getUserName()+"','"+user.getPassword()+"',"+user.getRole()+", "+ "CURRENT_DATE()"+")";
-            int countInsert = stmt.executeUpdate(signup);
-            loadingUsers();
+            try {
+                int idUser = -1;
+                conn.setAutoCommit(false);
+                String signup = "insert into Users(Username,Password,Role,Created) values('"+user.getUserName()+"','"+user.getPassword()+"',"+user.getRole()+", "+ "CURRENT_DATE()"+")";
+                int countInsert = stmt.executeUpdate(signup);
+                ResultSet rset = stmt.executeQuery("select max(IdUser) AS idnew from Users");
+                while (rset.next()){
+                    idUser = rset.getInt("idnew");
+                }
+                String strAddCustomer = "INSERT INTO Customer(IdCus, NameCus, Address, Email, Phone, level, Created) VALUES (" +
+                        idUser + ", '" + customer.getNameCus() +"' , '"+ customer.getAddress()+ "' , '" +
+                        customer.getEmail()+ "' , " + customer.getPhone()+ ", 1, CURRENT_DATE())";
+                countInsert = stmt.executeUpdate(strAddCustomer);
+                conn.commit();
+                loadingUsers();
+                return true;
+            }catch (SQLException ex){
+                ex.printStackTrace();
+                return false;
+            }
 
-            return true;
         }catch (SQLException ex){
             ex.printStackTrace();
             return false;
