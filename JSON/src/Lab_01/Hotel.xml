@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Hotel_audit>
+    <Hotel_name>
+        Precious View
+    </Hotel_name>
+    <Hotel_Address>
+        #1, Where Street, WhereWhy, 98045.
+        <Hotel_phone>
+            (605)1243-0000
+        </Hotel_phone>
+    </Hotel_Address>
+    <Hotel_Rating>
+        ***
+        </Hotel_Rating>
+<Sumary>
+The hotel charges are reasonable.
+</Sumary>
+        </Hotel_audit>

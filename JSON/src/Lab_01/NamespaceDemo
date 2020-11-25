@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Data:DataSheet xmlns:Data="http//aptechworldwide.com">
+<Data:Record>
+<Data:Name>John Dykes</Data:Name>
+<Data:Source>Cambridge</Data:Source>
+<Data:Destination>Norwich</Data:Destination>
+<Data:TravelDetails>
+    <Data:travalModel>Train</Data:travalModel>
+    <Data:ModeName>Central Train</Data:ModeName>
+    <Data:TravelType>One Way</Data:TravelType>
+    <Data:TravelClass>Business Class</Data:TravelClass>
+    <Data:PNR>222355656</Data:PNR>
+</Data:TravelDetails>
+</Data:Record>
+</Data:DataSheet>
