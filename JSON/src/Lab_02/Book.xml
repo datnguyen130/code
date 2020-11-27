@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE BOOK SYSTEM "Book.dtd">
+<BOOK>
+    <OPENER>
+        <TITLER_TEXT>
+            All about me
+        </TITLER_TEXT>
+    </OPENER>
+    <PART ID="P01">
+        <HEADER>Welcome to my book</HEADER>
+        <CHAPER>
+            <CHAPER_NUMBER>1</CHAPER_NUMBER>
+            <CHAPER_TEXT>
+                <p>&GLAD;</p>
+                <p>There is so much to say</p>
+                <p>How ablut more about me?</p>
+            </CHAPER_TEXT>
+        </CHAPER>
+    </PART>
+</BOOK>

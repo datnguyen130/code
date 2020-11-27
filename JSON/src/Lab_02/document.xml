@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"  standalone="yes" ?>
+
+<!DOCTYPE document [
+        <!ELEMENT document (employee)* >
+        <!ELEMENT employee (name, diredate, projects)>
+        <!ELEMENT name (lastname, firstname)>
+        <!ELEMENT lastname (#PCDATA)>
+        <!ELEMENT firstname (#PCDATA)>
+        <!ELEMENT diredate (#PCDATA)>
+        <!ELEMENT projects (project)*>
+        <!ELEMENT project (product, id, price)>
+        <!ELEMENT product (#PCDATA)>
+        <!ELEMENT id (#PCDATA)>
+        <!ELEMENT price (#PCDATA)>
+]>
+<document>
+    <employee>
+        <name>
+            <lastname>Kelly</lastname>
+            <firstname>Grace</firstname>
+        </name>
+        <diredate>October 15, 2005</diredate>
+        <projects>
+            <project>
+                <product>Printer</product>
+                <id>111</id>
+                <price>$1111.11</price>
+            </project>
+            <project>
+                <product>Laptop</product>
+                <id>222</id>
+                <price>$13322.99</price>
+            </project>
+        </projects>
+    </employee>
+</document>
