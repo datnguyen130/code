@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<?xml-stylesheet type="text/css" href="Music.css" ?>
+<Music>
+    <Album>
+        <Name>DAUGHTRY</Name>
+        <Artist>Daughtry</Artist>
+        <Year>2006</Year>
+    </Album>
+
+    <Album>
+        <Name>AVAKE</Name>
+        <Artist>Josh Groban</Artist>
+        <Year>2006</Year>
+    </Album>
+
+    <Album>
+        <Name id ="favorite">URANIUM</Name>
+        <Artist>Iran</Artist>
+        <Year>2006</Year>
+    </Album>
+</Music>
