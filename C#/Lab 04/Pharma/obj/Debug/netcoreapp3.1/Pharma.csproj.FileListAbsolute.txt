@@ -1,0 +1,13 @@
+C:\C#\Lab 04\Pharma\bin\Debug\netcoreapp3.1\Pharma.exe
+C:\C#\Lab 04\Pharma\bin\Debug\netcoreapp3.1\Pharma.deps.json
+C:\C#\Lab 04\Pharma\bin\Debug\netcoreapp3.1\Pharma.runtimeconfig.json
+C:\C#\Lab 04\Pharma\bin\Debug\netcoreapp3.1\Pharma.runtimeconfig.dev.json
+C:\C#\Lab 04\Pharma\bin\Debug\netcoreapp3.1\Pharma.dll
+C:\C#\Lab 04\Pharma\bin\Debug\netcoreapp3.1\Pharma.pdb
+C:\C#\Lab 04\Pharma\obj\Debug\netcoreapp3.1\Pharma.csprojAssemblyReference.cache
+C:\C#\Lab 04\Pharma\obj\Debug\netcoreapp3.1\Pharma.AssemblyInfoInputs.cache
+C:\C#\Lab 04\Pharma\obj\Debug\netcoreapp3.1\Pharma.AssemblyInfo.cs
+C:\C#\Lab 04\Pharma\obj\Debug\netcoreapp3.1\Pharma.csproj.CoreCompileInputs.cache
+C:\C#\Lab 04\Pharma\obj\Debug\netcoreapp3.1\Pharma.dll
+C:\C#\Lab 04\Pharma\obj\Debug\netcoreapp3.1\Pharma.pdb
+C:\C#\Lab 04\Pharma\obj\Debug\netcoreapp3.1\Pharma.genruntimeconfig.cache
