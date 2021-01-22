@@ -1,0 +1,13 @@
+C:\C#\Practice\Exercise_2\bin\Debug\netcoreapp3.1\Exercise_2.exe
+C:\C#\Practice\Exercise_2\bin\Debug\netcoreapp3.1\Exercise_2.deps.json
+C:\C#\Practice\Exercise_2\bin\Debug\netcoreapp3.1\Exercise_2.runtimeconfig.json
+C:\C#\Practice\Exercise_2\bin\Debug\netcoreapp3.1\Exercise_2.runtimeconfig.dev.json
+C:\C#\Practice\Exercise_2\bin\Debug\netcoreapp3.1\Exercise_2.dll
+C:\C#\Practice\Exercise_2\bin\Debug\netcoreapp3.1\Exercise_2.pdb
+C:\C#\Practice\Exercise_2\obj\Debug\netcoreapp3.1\Exercise_2.csprojAssemblyReference.cache
+C:\C#\Practice\Exercise_2\obj\Debug\netcoreapp3.1\Exercise_2.AssemblyInfoInputs.cache
+C:\C#\Practice\Exercise_2\obj\Debug\netcoreapp3.1\Exercise_2.AssemblyInfo.cs
+C:\C#\Practice\Exercise_2\obj\Debug\netcoreapp3.1\Exercise_2.csproj.CoreCompileInputs.cache
+C:\C#\Practice\Exercise_2\obj\Debug\netcoreapp3.1\Exercise_2.dll
+C:\C#\Practice\Exercise_2\obj\Debug\netcoreapp3.1\Exercise_2.pdb
+C:\C#\Practice\Exercise_2\obj\Debug\netcoreapp3.1\Exercise_2.genruntimeconfig.cache
