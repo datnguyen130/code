@@ -13,10 +13,12 @@ use App\Http\Controllers\Homecontroller;
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-Route::get('/',[Homecontroller::class,'showwelcome']);
+Route::get('/', function () {
+    return view('welcome');
+});
+
+//Route::get('/{name}','Homecontroller@showwelcome');
+
 Route::get('about', function (){
    return "About content";
 });
@@ -35,8 +37,8 @@ Route::get('try/{price}/{art}',function($price,$art){
 Route::get('where', function (){
     return redirect('about');
 });
-Route::redirect('where1','about',302);
-Route::get('try/{price?}/{art?}',function($price=null,$art=null){
+//Route::redirect('where1','about',302);
+Route::get('price/{price?}/art/{art?}',function($price=null,$art=null){
     if (!$art){
         return "Please enter art";
     }
@@ -47,4 +49,9 @@ Route::get('try/{price?}/{art?}',function($price=null,$art=null){
 });
 Route::get('user/{userid}/name/{username}',function ($userid,$username){
     return "user ID is $userid <br> user name is $username";
-}) ->where('userid','[0-9]+') ->where('username','[a-zA-Z]+');
+}) ->where('userid','[0-9]+') ->where('username','([a-zA-Z])+');
+Route::get('home','Homecontroller@showindex');
+
+Route::get('profile/{name?}','profileController@showprofile') ;
+
+Route::view('trangchu','index') ;
