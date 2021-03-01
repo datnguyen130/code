@@ -54,4 +54,15 @@ Route::get('home','Homecontroller@showindex');
 
 Route::get('profile/{name?}','profileController@showprofile') ;
 
-Route::view('trangchu','index') ;
+Route::get('trangchu',function (){
+    return view('index');
+});
+
+Route::get('displayposts','Post_Controller@DisplayPost');
+
+Route::get('postsfindid/{id}','Post_Controller@FindId');
+
+Route::get('insertposts/title/{title}/author/{author}','Post_Controller@insert');
+
+Route::get('update/{id}/{title}/{author}','Post_Controller@Update_Post');
+
