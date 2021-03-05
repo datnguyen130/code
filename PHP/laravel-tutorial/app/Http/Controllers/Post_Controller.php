@@ -41,7 +41,7 @@ class Post_Controller extends Controller
     }
 
     public function Update_Post($id,$title,$author){
-        $posts = Post::where('id',$id) -> first();
+        $posts = Post::find(1);
         $posts->title = $title;
         $posts->author = $author;
         $posts->save();
