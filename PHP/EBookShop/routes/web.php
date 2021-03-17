@@ -84,8 +84,8 @@ Route::get('/',function (){
 });
 Route::post('validation',function (Request $request){
    $validationData = Validator::make($request->all(),[
-        'name' => 'bail|required|min:6|max:255',
-       'age' => 'bail|required',
+        'name' => 'bail|required|alpha_dash|min:6|max:255',
+       'age' => 'bail|required|numeric|min:2',
        'address' => 'bail|required|max:200|min:2',
        'telephone' => 'bail|required|min:9',
    ]);
