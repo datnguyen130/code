@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\Brand;
+use App\Models\ProductDetail;
 use App\Models\Product;
 use App\Models\ProductCategory;
 use App\Models\ProductComment;
@@ -13,6 +14,12 @@ use Illuminate\Support\Facades\Auth;
 class ShopController extends Controller
 {
     public function show($id){
+
+        //set categories,brands
+        $categories = ProductCategory::all();
+        $brands = Brand::all();
+
+
         $product = Product::findOrFail($id);
 
         $avgRating = 0;
@@ -28,7 +35,7 @@ class ShopController extends Controller
             ->limit(4)
             ->get();
 
-        return view('front.shop.show',compact('product','avgRating','relatedProducts'));
+        return view('front.shop.show',compact('product','categories','brands','avgRating','relatedProducts'));
     }
 
     public function postComment(Request $request){
@@ -123,6 +130,24 @@ class ShopController extends Controller
         $priceMin = str_replace('$','',$priceMin);
         $priceMax = str_replace('$','',$priceMax);
         $products = ($priceMin != null && $priceMax != null) ? $products->whereBetween('price',[$priceMin,$priceMax]) : $products;
+
+        //size
+        $color = $request->color;
+        $products =  $color != null
+        ? $products->whereHas('product_details',function($query) use ($color)
+        {
+            return $query->where('color',$color)->where('qty','>',0);
+        })
+        : $products ;
+
+        //size
+        $size = $request->size;
+        $products =  $size != null
+            ? $products->whereHas('product_details',function($query) use ($size)
+            {
+                return $query->where('size',$size)->where('qty','>',0);
+            })
+            : $products ;
         return $products;
     }
 }
